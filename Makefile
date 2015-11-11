@@ -34,13 +34,13 @@ exe: 3D_geom_nonlin_truss.x
 
 .PHONY: maqao-cqa maqao-perf scan-build vtune-report
 
-maqao-cqa: path.x
+maqao-cqa: 3D_geom_nonlin_truss.x
 	( module load maqao ; \
-	  maqao cqa ./path.x fct=main uarch=HASWELL > maqao-cqa.report )
+	  maqao cqa ./3D_geom_nonlin_truss.x fct=main uarch=HASWELL > maqao-cqa.report )
 
-maqao-perf: path.x
+maqao-perf: 3D_geom_nonlin_truss.x
 	( module load maqao ; \
-	  maqao perf ./path.x fct=main uarch=HASWELL > maqao-perf.report )
+	  maqao perf ./3D_geom_nonlin_truss.x fct=main uarch=HASWELL > maqao-perf.report )
 
 scan-build:
 	( module load llvm-analyzer ; \
