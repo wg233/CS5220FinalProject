@@ -1,0 +1,11 @@
+#!/bin/sh -l
+
+#PBS -l nodes=1:ppn=24
+#PBS -l walltime=0:30:00
+#PBS -N 3D_geom_nonlin_truss-ampl-basic-hotspots
+#PBS -j oe
+
+module load cs5220
+cd $PBS_O_WORKDIR
+amplxe-cl -collect hotspots \
+./3D_geom_nonlin_truss.x -n 2000
